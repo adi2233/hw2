@@ -5,15 +5,8 @@ var fs=require('fs');
 
 
 module.exports = function(app) {
-   app.get('/getAllExcellenceStudent', function(req,res) {
-          var dtudentDetails=new Array();
-          for(var i=0;i<stud.length;i++){
-            if(stud[i].grade>89){
-               console.log('name:' + stud[i].name + '\r\n' + 'grade:' + stud[i].grade);
-                dtudentDetails.push('name:' + stud[i].name + '\r\n' + 'grade:' + stud[i].grade);              
-            }
-       }
-       res.json(dtudentDetails);
+   app.get('/getAllStudent', function(req,res) {
+       res.json(stud);
     })
    
    app.get('/getStudGrade/:id', function(req, res) {
