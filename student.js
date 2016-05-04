@@ -2,10 +2,11 @@ var express=require('express');
 var app=express();
 var stud=require('./students');
 var fs=require('fs');
-var dtudentDetails=new Array();
+
 
 module.exports = function(app) {
    app.get('/getAllExcellenceStudent', function(req,res) {
+          var dtudentDetails=new Array();
           for(var i=0;i<stud.length;i++){
             if(stud[i].grade>89){
                console.log('name:' + stud[i].name + '\r\n' + 'grade:' + stud[i].grade);
@@ -16,6 +17,7 @@ module.exports = function(app) {
     })
    
    app.get('/getStudGrade/:id', function(req, res) {
+          var dtudentDetails=new Array();
           for(var i=0;i<stud.length;i++){
               var idStud=req.params.id;
             if(stud[i].id==idStud){
@@ -28,6 +30,7 @@ module.exports = function(app) {
    
 
    app.get('/getExcellenceByYear/:year', function(req, res) {
+          var dtudentDetails=new Array();
           for(var i=0;i<stud.length;i++){
               var yearStud=req.params.year;
             if(stud[i].year==yearStud && stud[i].grade>89){
